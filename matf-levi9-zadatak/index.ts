@@ -12,11 +12,12 @@ class App{
         this.app.use(bodyParser.urlencoded({extended:true}));
     }
     public async start(){
+        const port = process.env.PORT || 8080;
         const connection = await createConnection();
         resultsController.registerRoutes(this.app, connection);
         
-        this.app.listen(8080, () => {
-            console.log("app listening on port http://localhost:8080");
+        this.app.listen(port, () => {
+            console.log("app listening on port http://localhost:" + port);
         })
     }
 
