@@ -46,8 +46,8 @@ export class resultsController{
 
     async deleteResult(req : express.Request, res: express.Response){
         console.log(req.params.id);
-        await this.connection.mongoManager.deleteOne(Result, { _id :req.params.id}); 
-        res.status(200).send("successful delete");
+        await this.connection.mongoManager.delete(Result, req.params.id);
+        res.send("delete");
     }
 
 }
