@@ -13,7 +13,7 @@ export class resultsController{
             new resultsController(con).store(request, response);
         });
         app.get("/results/:id", (request, response) => {
-            new resultsController(con).getResult(request, response);
+            new resultsController(con).getResult(request.body.id, response);
         });
         app.get("/results", (request, response) => {
             new resultsController(con).getResults(request, response);
@@ -35,8 +35,8 @@ export class resultsController{
         const items = await this.connection.mongoManager.find(Result);
         response.send(items);
     }
-    async getResult(id:ObjectID, response: express.Response){
-        const item = await this.connection.mongoManager.findOne(Result);
+    async getResult(id:string, response: express.Response){
+        const item = await this.connection.mongoManager.findOne(Result, id);
         response.send(item);
     }
 
