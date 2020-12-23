@@ -1,6 +1,7 @@
 import express from "express"
 import { Connection, ObjectID } from "typeorm";
 import {Result} from "../entities/result"
+
 export class resultsController{
 
     connection:Connection;
@@ -9,14 +10,17 @@ export class resultsController{
     }
 
     static registerRoutes(app: express.Application, con: Connection){
-        app.post("/results", (request, response) => {
+        app.post("/admin/unos-novog-proizvoda", (request, response) => {
             new resultsController(con).store(request, response);
         });
-        app.get("/results/:id", (request, response) => {
+        app.get("/admin/proizvodi/:id", (request, response) => {
             new resultsController(con).getResult(request.body.id, response);
         });
-        app.get("/results", (request, response) => {
+        app.get("/admin/proizvodi", (request, response) => {
             new resultsController(con).getResults(request, response);
+        })
+        app.delete("/admin/proizvodi/:id", (request, response) => {
+            new resultsController(con).deleteResult(request, response);
         })
 
     }
@@ -38,6 +42,12 @@ export class resultsController{
     async getResult(id:string, response: express.Response){
         const item = await this.connection.mongoManager.findOne(Result, id);
         response.send(item);
+    }
+
+    async deleteResult(req : express.Request, res: express.Response){
+        console.log(req.params.id);
+        await this.connection.mongoManager.deleteOne(Result, { _id :req.params.id}); 
+        res.status(200).send("successful delete");
     }
 
 }
