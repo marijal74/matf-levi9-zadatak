@@ -10,8 +10,8 @@ function App() {
       <div className="App">
       <header className="App-header">
       <Navbar/>
-      <Route path = "/admin/unos-novog-proizvoda" exact component = {ShopItem}></Route>
-      <Route path = "/admin/proizvodi" exact component = {TableList}></Route>
+      <Route path = "/admin/unos-novog-proizvoda"  component = {ShopItem}></Route>
+      <Route path = "/admin/proizvodi"  component = {TableList}></Route>
       </header>
       
     </div>
