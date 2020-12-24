@@ -9,13 +9,20 @@ export const TableList = () => {
     
     return(
         <div>
-            <table>
+            <table className = "Table">
+            <thead className = "TableHeader">
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </thead>
+            <tbody>
             {items.map( item => (
                 <TableItem
+                key = {item.name}
                 name = {item.name}
                 description = {item.desc}
                 price = {item.price}></TableItem>))}
-
+            </tbody>
             </table>
         </div>
     )

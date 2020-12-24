@@ -7,11 +7,8 @@ function App() {
     <div className="App">
       <header className="App-header">
       <ShopItem></ShopItem>  
-      </header>
-      <div>
+      </header>      
         <TableList/>
-      </div>
-      
     </div>
     
   );
