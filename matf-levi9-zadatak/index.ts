@@ -2,6 +2,7 @@ import express from "express";
 import {resultsController} from "./controllers/resultsController";
 import * as bodyParser from "body-parser";
 import {createConnection} from "typeorm"
+import cors from "cors"
 
 class App{
     private app: express.Application;
@@ -10,6 +11,7 @@ class App{
         this.app = express();
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended:true}));
+        this.app.use(cors());
     }
     public async start(){
         const port = process.env.PORT || 8080;
