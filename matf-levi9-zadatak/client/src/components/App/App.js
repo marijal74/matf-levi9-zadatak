@@ -2,7 +2,7 @@ import './App.css';
 import ShopItem from '../ShopItem/CreateShopItem';
 import { TableList } from '../TableList/TableList';
 import Navbar from "../Navbar/Navbar"
-import {BrowserRouter as Router} from "react-router-dom"
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
 function App() {
   return (
@@ -10,11 +10,9 @@ function App() {
       <div className="App">
       <header className="App-header">
       <Navbar/>
-      <ShopItem></ShopItem>  
+      <Route path = "/admin/unos-novog-proizvoda" exact component = {ShopItem}></Route>
+      <Route path = "/admin/proizvodi" exact component = {TableList}></Route>
       </header>
-      <div>
-        <TableList/>
-      </div>
       
     </div>
     </Router>
