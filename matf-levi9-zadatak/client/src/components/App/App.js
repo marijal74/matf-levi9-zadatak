@@ -1,5 +1,6 @@
 import './App.css';
 import ShopItem from '../ShopItem/CreateShopItem';
+import { TableList } from '../TableList/TableList';
 
 function App() {
   return (
@@ -7,6 +8,9 @@ function App() {
       <header className="App-header">
       <ShopItem></ShopItem>  
       </header>
+      <div>
+        <TableList/>
+      </div>
       
     </div>
     
