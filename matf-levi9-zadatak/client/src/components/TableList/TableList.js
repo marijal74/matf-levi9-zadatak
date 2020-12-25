@@ -7,7 +7,9 @@ export const TableList = () => {
 
     useEffect(() => {
         ItemApi.getAllItems()
-        .then(res => {setItems(res)})
+        .then(res => {
+            setItems(res);
+        })
         
 
     }, []);
@@ -15,9 +17,9 @@ export const TableList = () => {
         <div>
             <table>
             <tbody>
-            {items.map( (item) => (
+            {items.map( (item, index) => (
                 <TableItem
-                key = {item._id}
+                _id = {index}
                 name = {item.name}
                 description = {item.description}
                 price = {item.price}></TableItem>))}

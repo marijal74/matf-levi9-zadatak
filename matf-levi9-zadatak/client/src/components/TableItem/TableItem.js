@@ -2,7 +2,7 @@ import {React} from "react"
 
 export const TableItem = props =>{
     return (
-        <tr>
+        <tr key = {props._id}>
             <td>ItemName {props.name}</td>
             <td>ItemDescription {props.description}</td>
             <td>ItemPrice {props.price}</td>
