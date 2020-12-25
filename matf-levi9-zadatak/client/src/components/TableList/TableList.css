@@ -1,0 +1,17 @@
+.Table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color :rgba(236, 223, 186, 0.883);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: small;
+    color: rgb(79, 79, 126);
+    border-radius: 1.5vh;
+  
+  }
+
+.TableHeader{
+    background-color :rgba(223, 203, 151, 0.829);
+  
+  }

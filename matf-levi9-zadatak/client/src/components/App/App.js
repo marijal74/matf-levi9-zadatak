@@ -13,7 +13,6 @@ function App() {
       <Route path = "/admin/unos-novog-proizvoda"  component = {ShopItem}></Route>
       <Route path = "/admin/proizvodi"  component = {TableList}></Route>
       </header>
-      
     </div>
     </Router>
     

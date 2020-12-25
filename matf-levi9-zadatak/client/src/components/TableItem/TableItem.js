@@ -1,8 +1,9 @@
 import {React} from "react"
+import "./TableItem.css"
 
 export const TableItem = props =>{
     return (
-        <tr key = {props._id}>
+        <tr className = "Row" key = {props._id}>
             <td> {props.name}</td>
             <td> {props.description}</td>
             <td> {props.price}</td>

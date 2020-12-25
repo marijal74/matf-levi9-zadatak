@@ -1,9 +1,19 @@
 .Navbar{
-    margin-left: auto;
-    margin-right: auto;
     color : whitesmoke;
     font-size: smaller;
-    align-items: center;
-    justify-content: space-between;
     list-style: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+li {
+    display: inline;
+    margin: 20px;
+    
+}
+a {
+    color : whitesmoke;
+    font-size: smaller;
+    justify-content: space-between;
 }
