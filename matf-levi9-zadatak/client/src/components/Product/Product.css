@@ -1,0 +1,26 @@
+.Product{
+    width: 25vh;
+    height: 25vh;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    color: rgb(90, 99, 144);
+    border-radius: 5px;
+    background-color: lavender;
+}
+.Title{
+    background-color: lavender;
+    font-size: x-large;
+    color: rgb(76, 85, 129);
+    border-radius: 5px;
+
+}
+.Img{
+    height: 60%;
+    background-color: rgb(164, 168, 173);
+}
+.Desc{
+    color: rgb(90, 99, 144);
+    font-size: medium;
+    
+
+}

@@ -9,9 +9,9 @@
 
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
+  background-color: rgb(108, 148, 165);
   flex-direction: column;
   align-items: normal;
   justify-content: center;
