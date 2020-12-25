@@ -16,10 +16,15 @@ export const TableList = () => {
     return(
         <div>
             <table>
+            <thead className = "TableHeader">
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </thead>
             <tbody>
             {items.map( (item, index) => (
                 <TableItem
-                _id = {index}
+                key = {index}
                 name = {item.name}
                 description = {item.description}
                 price = {item.price}></TableItem>))}

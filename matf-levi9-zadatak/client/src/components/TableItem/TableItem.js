@@ -3,9 +3,9 @@ import {React} from "react"
 export const TableItem = props =>{
     return (
         <tr key = {props._id}>
-            <td>ItemName {props.name}</td>
-            <td>ItemDescription {props.description}</td>
-            <td>ItemPrice {props.price}</td>
+            <td> {props.name}</td>
+            <td> {props.description}</td>
+            <td> {props.price}</td>
             <td>
                 <button>Delete</button>
             </td>
