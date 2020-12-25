@@ -1,6 +1,6 @@
 import './App.css';
 import ShopItem from '../ShopItem/CreateShopItem';
-import { TableList } from '../TableList/TableList';
+import TableList from '../TableList/TableList';
 import Navbar from "../Navbar/Navbar"
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 

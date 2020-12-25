@@ -14,7 +14,7 @@ class App{
         this.app.use(cors());
     }
     public async start(){
-        const port = process.env.PORT || 8080;
+        const port = 8080;
         const connection = await createConnection();
         resultsController.registerRoutes(this.app, connection);
         

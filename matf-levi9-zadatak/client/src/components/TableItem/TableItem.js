@@ -1,7 +1,6 @@
 import {React} from "react"
 
 export const TableItem = props =>{
-
     return (
         <tr>
             <td>ItemName {props.name}</td>

@@ -1,22 +1,29 @@
 import {React, useEffect, useState} from "react"
 import { TableItem } from "../TableItem/TableItem";
-
+import ItemApi  from "../../api/entries"
 export const TableList = () => {
 
-    const [items, setItems] = useState([{"name":"itemcic", "desc": "itemcic desc", "price":120},
-                                        {"name":"itemcicBad", "desc": "bad stuff", "price":20}]);
+    const [items, setItems] = useState([]);
 
-    
+    useEffect(() => {
+        ItemApi.getAllItems()
+        .then(res => {setItems(res)})
+        
+
+    }, []);
     return(
         <div>
             <table>
-            {items.map( item => (
+            <tbody>
+            {items.map( (item) => (
                 <TableItem
+                key = {item._id}
                 name = {item.name}
-                description = {item.desc}
+                description = {item.description}
                 price = {item.price}></TableItem>))}
-
+            </tbody>
             </table>
         </div>
     )
 }
+export default TableList;
