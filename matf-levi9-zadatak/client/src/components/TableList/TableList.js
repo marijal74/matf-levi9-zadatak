@@ -13,7 +13,7 @@ export const TableList = () => {
         })
         
 
-    }, []);
+    }, [items]);
     return(
         <div>
             <table className = "Table">
@@ -28,6 +28,7 @@ export const TableList = () => {
             {items.map( (item) => (
                 <TableItem
                 key = {item.id}
+                id = {item.id}
                 name = {item.name}
                 description = {item.description}
                 price = {item.price}></TableItem>))}
