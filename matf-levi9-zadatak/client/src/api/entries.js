@@ -14,12 +14,28 @@ class ItemApi {
     }
 
     getAllItems() {
+        
         return this.httpClient
                    .get("/admin/proizvodi")
-                   .then(res => res.data.map(item => this.mapResponse(item)));
+                   .then(res => 
+                    res.data.map(item => this.mapResponse(item)));
 
     }
+    getHome() {
+        
+        return this.httpClient
+                   .get("/")
+                   .then(res => 
+                    res.data.map(item => this.mapResponse(item)));
 
+    }
+    getItem(id) {
+        console.log(id);
+        return this.httpClient
+                   .get(`/admin/proizvodi/${id}`)
+                   .then(res => this.mapResponse(res.data));
+
+    }
     createItem(item) {
         
         const config = {
@@ -28,7 +44,6 @@ class ItemApi {
             }
         };
         
-        console.log(item.name, item.description, item.price);
         return this.httpClient
                    .post(`/admin/unos-novog-proizvoda`, qs.stringify(item), config)
                    .then(res => this.mapResponse(res.data));
@@ -39,7 +54,8 @@ class ItemApi {
     }
     mapResponse(res){
         return {
-            id: res._id,
+            
+            id: res.id,
             name: res.name,
             description: res.description,
             price: res.price

@@ -14,7 +14,11 @@ export class resultsController{
             new resultsController(con).store(request, response);
         });
         app.get("/admin/proizvodi/:id", (request, response) => {
+            console.log(request);
             new resultsController(con).getResult(request.body.id, response);
+        });
+        app.get("/", (request, response) => {
+            new resultsController(con).getResults(request, response);
         });
         app.get("/admin/proizvodi", (request, response) => {
             new resultsController(con).getResults(request, response);

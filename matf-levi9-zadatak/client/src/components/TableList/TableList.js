@@ -5,7 +5,7 @@ import "./TableList.css"
 export const TableList = () => {
 
     const [items, setItems] = useState([]);
-
+    
     useEffect(() => {
         ItemApi.getAllItems()
         .then(res => {
@@ -25,9 +25,9 @@ export const TableList = () => {
                 </tr>
             </thead>
             <tbody>
-            {items.map( (item, index) => (
+            {items.map( (item) => (
                 <TableItem
-                key = {index}
+                key = {item.id}
                 name = {item.name}
                 description = {item.description}
                 price = {item.price}></TableItem>))}

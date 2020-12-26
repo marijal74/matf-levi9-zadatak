@@ -7,6 +7,7 @@ import cors from "cors"
 class App{
     private app: express.Application;
 
+    
     constructor(){
         this.app = express();
         this.app.use(bodyParser.json());
