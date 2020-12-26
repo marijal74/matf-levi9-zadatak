@@ -17,7 +17,6 @@ const Details = (props) => {
     },[]);
     return (
         <div className="Details">
-            {/* <div>{product.name, product.description, product.price}</div> */}
              <Product name = {product.name}
                     description = {product.description}
                     price = {product.price}
